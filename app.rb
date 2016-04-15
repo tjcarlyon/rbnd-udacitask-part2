@@ -1,7 +1,9 @@
+ #require 'bundler/setup
+ require 'win32/sound'
+ include Win32
  require 'chronic'
  require 'colorize'
-# Find a third gem of your choice and add it to your project
-require 'date'
+ require 'date'
 require_relative "lib/listable"
 require_relative "lib/errors"
 require_relative "lib/udacilist"
@@ -9,7 +11,8 @@ require_relative "lib/todo"
 require_relative "lib/event"
 require_relative "lib/link"
 
-list = UdaciList.new(title: "Julia's Stuff")
+#sound = Sound.play('chimes.wav')
+list = UdaciList.new(title: "Julia's Stuff".colorize(:magenta))
 list.add("todo", "Buy more cat food", due: "2016-02-03", priority: "low")
 list.add("todo", "Sweep floors", due: "2016-01-30")
 list.add("todo", "Buy groceries", priority: "high")
@@ -40,7 +43,8 @@ list.all
 
 # DISPLAY UNTITLED LIST
 # ---------------------
- new_list.all
+sound = Sound.play('chimes.wav')
+new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------

@@ -4,7 +4,8 @@ class UdaciList
   def initialize(options={})
     @title = options[:title]
     @items = []
-  end
+    
+    end
 
   def add(type, description, options={})
     type = type.downcase
@@ -30,13 +31,24 @@ end
   end
 end
 
+def new_title
+    if @title
+      return @title
+    else
+      @title = "Untitled List".colorize(:blue)
+      return @title
+    end
+  end
 
-  def all
-    #puts "-" * @title.length
-    #puts @title
-    #puts "-" * @title.length
+
+def all(options ={})
+    #sound = Sound.play('chimes.wav')
+    puts "-" * new_title.length
+    puts @title
+    puts "-" * new_title.length
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
+
     end
   end
 end
