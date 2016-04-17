@@ -13,5 +13,3 @@ class EventItem
     format_description(@description) + "event dates: " + format_date(@start_date, @end_date)
   end
 end
-
- 

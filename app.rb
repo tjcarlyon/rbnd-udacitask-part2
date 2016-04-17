@@ -4,6 +4,7 @@
  require 'chronic'
  require 'colorize'
  require 'date'
+ require 'artii'
 require_relative "lib/listable"
 require_relative "lib/errors"
 require_relative "lib/udacilist"
@@ -48,4 +49,4 @@ new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-# new_list.filter("event")
+ new_list.filter("event")

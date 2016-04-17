@@ -5,7 +5,13 @@ class UdaciList
     @title = options[:title]
     @items = []
     
-    end
+  end
+
+  
+    
+    
+
+
 
   def add(type, description, options={})
     type = type.downcase
@@ -21,7 +27,27 @@ class UdaciList
   end
 end
 
-  def delete(index)
+def filter(type)
+   a = Artii::Base.new :font => 'slant'
+    puts a.asciify("#{type} list")
+    #puts "Filtered by #{type}"
+    @items.each_with_index do |item, position|
+      if item.class.name.downcase.include? type
+        puts "#{position + 1}) #{item.details}"
+      end
+    end
+  end
+        
+
+
+
+
+
+
+
+
+
+def delete(index)
     indexlimit = @items.length
     if index > indexlimit then
       raise UdaciListErrors::IndexExceedsListSize
@@ -49,6 +75,9 @@ def all(options ={})
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
 
+
     end
   end
 end
+
+

@@ -22,4 +22,3 @@ module Listable
     return value
   end
 end
-
