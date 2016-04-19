@@ -1,19 +1,14 @@
 class UdaciList
+  
   attr_reader :title, :items
 
   def initialize(options={})
     @title = options[:title]
     @items = []
-    
-  end
+   end
 
   
-    
-    
-
-
-
-  def add(type, description, options={})
+    def add(type, description, options={})
     type = type.downcase
     case type
     when "todo"
@@ -27,10 +22,24 @@ class UdaciList
   end
 end
 
+
+def clear_list
+   @title = "Cleared List"
+    puts "-" * new_title.length
+    puts @title
+    puts "-" * new_title.length
+    counter = 0
+    while counter < items.length
+      items.delete_at(0)
+    end
+  end
+
+
 def filter(type)
-   a = Artii::Base.new :font => 'slant'
-    puts a.asciify("#{type} list")
-    #puts "Filtered by #{type}"
+   @title = "Filter list"
+    puts "-" * new_title.length
+    puts @title
+    puts "-" * new_title.length
     @items.each_with_index do |item, position|
       if item.class.name.downcase.include? type
         puts "#{position + 1}) #{item.details}"
@@ -38,15 +47,6 @@ def filter(type)
     end
   end
         
-
-
-
-
-
-
-
-
-
 def delete(index)
     indexlimit = @items.length
     if index > indexlimit then
@@ -66,6 +66,11 @@ def new_title
     end
   end
 
+  
+
+
+
+
 
 def all(options ={})
     #sound = Sound.play('chimes.wav')
@@ -79,5 +84,9 @@ def all(options ={})
     end
   end
 end
+
+
+
+
 
 
