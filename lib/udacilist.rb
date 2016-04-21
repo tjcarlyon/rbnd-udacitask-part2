@@ -1,11 +1,12 @@
 class UdaciList
   
+  
   attr_reader :title, :items
 
   def initialize(options={})
     @title = options[:title]
     @items = []
-   end
+    end
 
   
     def add(type, description, options={})
@@ -46,7 +47,9 @@ def filter(type)
       end
     end
   end
-        
+
+
+
 def delete(index)
     indexlimit = @items.length
     if index > indexlimit then
@@ -67,23 +70,25 @@ def new_title
   end
 
   
-
-
-
-
-
 def all(options ={})
     #sound = Sound.play('chimes.wav')
     puts "-" * new_title.length
     puts @title
     puts "-" * new_title.length
+    rows = []
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
-
+      rows << [position + 1 , item.details] #{item.details}"
+end
+table = Terminal::Table.new :rows => rows
+    puts table
 
     end
   end
-end
+#end
+
+
+
+
 
 
 

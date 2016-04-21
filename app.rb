@@ -5,10 +5,11 @@
  require 'colorize'
  require 'date'
  require 'artii'
-
+ require 'terminal-table'
+ 
 
  
- 
+
 require_relative "lib/listable"
 require_relative "lib/errors"
 require_relative "lib/udacilist"
@@ -17,8 +18,16 @@ require_relative "lib/event"
 require_relative "lib/link"
 
 
+
 a = Artii::Base.new :font => 'slant'
 puts a.asciify("Udacitask II")
+
+
+
+
+
+
+
 
 
 #sound = Sound.play('chimes.wav')
@@ -57,9 +66,12 @@ list.all
 sound = Sound.play('chimes.wav')
 new_list.all
 
+
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
 
-new_list.clear_list
+#new_list.clear_list
+
 #new_list.all
+

@@ -11,7 +11,7 @@ module Listable
   end
 
 
-  def format_priority(priority)
+def format_priority(priority)
     value = " ⇧".colorize(:red) if @priority == "high"
     value = " ⇨".colorize(:yellow) if @priority == "medium"
     value = " ⇩".colorize(:green) if @priority == "low"
@@ -22,6 +22,6 @@ module Listable
     return value
   end
 
-  
+
   
 end

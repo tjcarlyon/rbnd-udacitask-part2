@@ -7,6 +7,10 @@ class TodoItem
     @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     @priority = options[:priority]
   end
+
+  #def update_priority_status(update)
+    #@priority = update
+  #end
  
   
   def details
