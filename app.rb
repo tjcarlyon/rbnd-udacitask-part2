@@ -6,6 +6,7 @@
  require 'date'
  require 'artii'
  require 'terminal-table'
+ require 'barometer'
  
 
  
@@ -19,10 +20,22 @@ require_relative "lib/link"
 
 
 
+
 a = Artii::Base.new :font => 'slant'
 puts a.asciify("Udacitask II")
 
 
+barometer = Barometer.new("Dallas")
+weather = barometer.measure
+
+puts weather.current.temperature.f
+weather.current       # returns the first successful current_measurement
+weather.forecast      # returns the first successful forecast_measurements
+weather.today         # returns the first successful forecast_measurement for today
+weather.tomorrow      # returns the first successful forecast_measurement for tomorrow
+
+puts weather.current.temperature.f
+puts weather.tomorrow.high.f
 
 
 
@@ -42,9 +55,11 @@ list.all
 list.delete(3)
 list.all
 
+
 # SHOULD CREATE AN UNTITLED LIST AND ADD ITEMS TO IT
 # --------------------------------------------------
  new_list = UdaciList.new # Should create a list called "Untitled List"
+
  new_list.add("todo", "Buy more dog food", due: "in 5 weeks", priority: "medium")
  new_list.add("todo", "Go dancing", due: "in 2 hours")
  new_list.add("todo", "Buy groceries", priority: "high")
@@ -65,13 +80,21 @@ list.all
 # ---------------------
 sound = Sound.play('chimes.wav')
 new_list.all
+new_list.change_priority(2, "high")
+new_list.all
+
+
+
 
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-new_list.filter("event")
+
+#new_list.filter("event")
+#new_list.all
+
+
 
 #new_list.clear_list
 
 #new_list.all
-

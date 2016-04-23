@@ -6,6 +6,7 @@ class UdaciList
   def initialize(options={})
     @title = options[:title]
     @items = []
+    
     end
 
   
@@ -22,6 +23,10 @@ class UdaciList
      raise UdaciListErrors::InvalidItemType.new "#{type} not supported."
   end
 end
+
+ 
+
+
 
 
 def clear_list
@@ -49,7 +54,6 @@ def filter(type)
   end
 
 
-
 def delete(index)
     indexlimit = @items.length
     if index > indexlimit then
@@ -59,6 +63,17 @@ def delete(index)
     @items.delete_at(index - 1)
   end
 end
+
+
+
+def change_priority(index, priority)
+    item = @items[index - 1]
+    if item.type_name == "todo" then
+      item.priority = priority
+    end
+    puts "Priority changed to: #{priority}"
+  end
+
 
 def new_title
     if @title
@@ -85,10 +100,6 @@ table = Terminal::Table.new :rows => rows
     end
   end
 #end
-
-
-
-
 
 
 
