@@ -11,31 +11,29 @@
 
  
 
-require_relative "lib/listable"
-require_relative "lib/errors"
-require_relative "lib/udacilist"
-require_relative "lib/todo"
-require_relative "lib/event"
-require_relative "lib/link"
+ require_relative "lib/listable"
+ require_relative "lib/errors"
+ require_relative "lib/udacilist"
+ require_relative "lib/todo"
+ require_relative "lib/event"
+ require_relative "lib/link"
 
 
 
 
-a = Artii::Base.new :font => 'slant'
-puts a.asciify("Udacitask II")
+ a = Artii::Base.new :font => 'slant'
+ puts a.asciify("Udacitask II")
 
 
-barometer = Barometer.new("Dallas")
-weather = barometer.measure
+ barometer = Barometer.new("Austin")
+ weather = barometer.measure
 
-puts weather.current.temperature.f
+ puts "Current Temp is : #{weather.current.temperature.f} degrees".colorize(:yellow)
 weather.current       # returns the first successful current_measurement
 weather.forecast      # returns the first successful forecast_measurements
 weather.today         # returns the first successful forecast_measurement for today
 weather.tomorrow      # returns the first successful forecast_measurement for tomorrow
-
-puts weather.current.temperature.f
-puts weather.tomorrow.high.f
+puts "Tomorrow's high will reach : #{weather.tomorrow.high.f} degrees".colorize(:yellow)
 
 
 
@@ -81,7 +79,7 @@ list.all
 sound = Sound.play('chimes.wav')
 new_list.all
 new_list.change_priority(2, "high")
-new_list.all
+#new_list.all
 
 
 
@@ -90,7 +88,7 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 
-#new_list.filter("event")
+new_list.filter("event")
 #new_list.all
 
 

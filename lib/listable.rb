@@ -11,17 +11,17 @@ module Listable
   end
 
 
-def format_priority(priority)
+  def format_priority(priority)
     value = " ⇧".colorize(:red) if @priority == "high"
     value = " ⇨".colorize(:yellow) if @priority == "medium"
     value = " ⇩".colorize(:green) if @priority == "low"
     value = "" if !@priority
     if !value
- raise UdaciListErrors::InvalidPriorityValue, "#{priority}"
-    end
-    return value
-  end
+     raise UdaciListErrors::InvalidPriorityValue, "#{priority}"
+   end
+   return value
+ end
 
 
-  
+ 
 end

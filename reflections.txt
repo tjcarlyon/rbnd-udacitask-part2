@@ -1,13 +1,14 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+I used terminal-table, barometer and win32/sound.  I thought a sound beeping as your file loaded up gives you a sense its started and also having basic weather info is always a good idea with your todo list.  The weather gem was very basic..i tried getting others to work but spent a lot of time with not much siccess.  So I went with a very basic one for now,
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Feature 1...A method to clear your todo list
+  b) Feature 2...A method to change the priority of todo item)inex, priority)
 
 # REFLECTIONS
 # -------------------------------------------------------
-1. How long did you spend working on this project?
-2. What was the most rewarding challenge you conquered?
-3. What two additional features did you build? Why?
-4. Where do you still have room to grow?
+1. How long did you spend working on this project? 10 hours perhaps
+2. What was the most rewarding challenge you conquered?  All of it!
+3. What two additional features did you build? Why? As decribed above.  Clearing a list onluy makes sense to me.  Your list will always change.  Also your priorities change daily in life.  So give the option to change them as well.
+4. Where do you still have room to grow?  Truly everywhere..i find it very challenging and I am always reviewing old material.
